@@ -18,16 +18,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             email: credentials?.email as string,
           },
         });
-          if (!user || !user.password) return null;
+        if (!user || !user.password) return null;
 
-          const isValid = await bcrypt.compare(
-            credentials?.password,
-            user.password
-          );
+    const isValid = await bcrypt.compare(
+      credentials?.password || "",
+      user.password
+    );
 
-          if (!isValid) return null;
 
-          return user;
+        if (!isValid) return null;
+
+        return user;
       },
     }),
   ],
