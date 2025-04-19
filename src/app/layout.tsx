@@ -1,8 +1,8 @@
 // yoann.croguennec@gmail.com
 import type { Metadata } from "next";
 import "./globals.css";
-import { auth, signOut } from "@/auth/authSetup";
-import Link from "next/link";
+// import { auth, signOut } from "@/auth/authSetup";
+// import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,15 +14,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
+  // const session = await auth();
 
-  console.log("====================================");
-  console.log(session?.user?.email);
-  console.log("====================================");
+  // console.log("====================================");
+  // console.log(session?.user?.email);
+  // console.log("====================================");
   return (
     <html lang='en'>
       <body cz-shortcut-listen='true'>
-        <div className='hover:underline'>
+        {/* <div className='hover:underline'>
           {session?.user ? (
             <form
               action={async () => {
@@ -43,8 +43,8 @@ export default async function RootLayout({
             <h1>{session?.user?.email}</h1>
           ) : (
             <h1>Pas connecté</h1>
-          )}{" "}
-        </div>
+          )}
+        </div> */}
         {children}
       </body>
     </html>
