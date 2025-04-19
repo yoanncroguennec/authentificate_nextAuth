@@ -13,10 +13,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        // Vérifie si l'email et le mot de passe sont définis
-        if (!credentials?.email || !credentials?.password) return null;
+        // Vérifie que l'email et le mot de passe sont fournis
+        if (
+          !credentials?.email ||
+          typeof credentials.email !== "string" ||
+          !credentials?.password
+        ) {
+          return null; // Retourne null si l'email ou le mot de passe est manquant
+        }
 
-        // Cherche l'utilisateur dans la base de données
+        // Cherche l'utilisateur dans la base de données avec un email valide
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         });
