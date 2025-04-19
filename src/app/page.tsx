@@ -5,13 +5,14 @@ export default async function Home() {
 
   return (
     <div style={{ background: "#F3CF3C", height: "100vh", width: "100vw" }}>
-      <div>
+      <h1>Lorem ipsum dolor, sit amet consectetur atus ut soluta mollitia. Quibusdam sint a consequuntur cum suscipit saepe sunt.</h1>
+      {/* <div>
         {session?.user?.email ? (
           <h1>{session?.user?.email}</h1>
         ) : (
           <h1>Pas connecté</h1>
         )}{" "}
-      </div>
+      </div> */}
     </div>
   );
 }
