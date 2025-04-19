@@ -1,7 +1,7 @@
-import { auth } from "@/auth/authSetup";
+// import { auth } from "@/auth/authSetup";
 
-export default async function Home() {
-  const session = await auth();
+export default function Home() {
+  // const session = await auth();
 
   return (
     <div style={{ background: "#F3CF3C", height: "100vh", width: "100vw" }}>
